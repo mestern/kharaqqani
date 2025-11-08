@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خط زمانی ابوالحسن خرقانی</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazir', 'Tahoma', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #f0a500, #c49000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(240,165,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #b8b8b8;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            right: 50%;
+            transform: translateX(50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #f0a500, #c49000);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 80px;
+            position: relative;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            padding: 30px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(240,165,0,0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.03);
+            border-color: #f0a500;
+            box-shadow: 0 0 30px rgba(240,165,0,0.4);
+        }
+
+        .timeline-marker {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #f0a500, #c49000);
+            border-radius: 50%;
+            position: absolute;
+            right: 50%;
+            transform: translateX(50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            z-index: 10;
+            box-shadow: 0 0 20px rgba(240,165,0,0.6);
+        }
+
+        .year {
+            font-size: 1.8rem;
+            color: #f0a500;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .event-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .event-desc {
+            line-height: 1.8;
+            color: #d0d0d0;
+            font-size: 1rem;
+        }
+
+        .quote {
+            background: rgba(240,165,0,0.1);
+            border-right: 4px solid #f0a500;
+            padding: 15px 20px;
+            margin-top: 15px;
+            border-radius: 8px;
+            font-style: italic;
+            color: #ffd700;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 80px 0;
+            font-size: 2rem;
+            color: #f0a500;
+            position: relative;
+        }
+
+        .section-divider::before,
+        .section-divider::after {
+            content: '◆';
+            margin: 0 20px;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                right: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+            }
+
+            .timeline-content {
+                width: calc(100% - 70px);
+                margin-right: 70px;
+            }
+
+            .timeline-marker {
+                right: 30px;
+                transform: translateX(0);
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .stats-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-item {
+            background: rgba(255,255,255,0.08);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid rgba(240,165,0,0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: #f0a500;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            margin-top: 10px;
+            color: #d0d0d0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>شیخ ابوالحسن خرقانی</h1>
+            <p>سفر عارفی از خرقان تا خلود • ۳۵۲-۴۲۵ هجری</p>
+        </div>
+
+        <div class="stats-box">
+            <div class="stat-item">
+                <div class="stat-number">۷۳</div>
+                <div class="stat-label">سال عمر پربرکت</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">۱۲</div>
+                <div class="stat-label">سال مجاهدت شبانه</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">۱۱۷</div>
+                <div class="stat-label">سال پس از بایزید</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">۱۰۰۰+</div>
+                <div class="stat-label">سال تأثیرگذاری</div>
+            </div>
+        </div>
+
+        <div class="section-divider">پیش از تولد</div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker">۱</div>
+                <div class="timeline-content">
+                    <div class="year">۲۳۴ هجری</div>
+                    <div class="event-title">پیش‌بینی بایزید بسطامی</div>
+                    <div class="event-desc">
+                        حدود ۱۱۷ سال قبل از تولد شیخ، بایزید بسطامی هنگام عبور از خرقان می‌ایستد و نفس عمیقی می‌کشد. مریدانش تعجب می‌کنند. او می‌گوید: «از این دیار بوی مردی می‌شنوم؛ مردی به نام علی با کنیت ابوالحسن که به درجه از من پیش بود. بار عیال کشد و کشت کند و درخت نشاند.»
+                    </div>
+                    <div class="quote">
+                        «گفت زین سو بوی یاری می‌رسد / کاندر این ده شهریاری می‌رسد»
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-divider">تولد و دوران آمادگی</div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker">۲</div>
+                <div class="timeline-content">
+                    <div class="year">۳۵۲ هجری</div>
+                    <div class="event-title">ولادت در خرقان</div>
+                    <div class="event-desc">
+                        در روستای خرقان از توابع بسطام، کودکی به نام علی متولد می‌شود. پدرش از دهقانان و کشاورزان منطقه است. این کودک همان کسی است که بایزید ۱۱۷ سال پیش از او خبر داده بود. محل تولد: قصبه خرقان، قومس (کومش)، در مسیر امروزی استان سمنان.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker">۳</div>
+                <div class="timeline-content">
+                    <div class="year">دوران جوانی</div>
+                    <div class="event-title">زندگی ساده و عطش معنوی</div>
+                    <div class="event-desc">
+                        ابوالحسن در خانواده‌ای ساده بزرگ می‌شود. او سواد ندارد - امّی است. کشاورزی و باغبانی می‌کند، عیالوار می‌شود - دقیقاً همان‌طور که بایزید پیش‌بینی کرده بود. اما در دل این زندگی ساده، عطش عمیقی برای معرفت حق دارد.
+                    </div>
+                    <div class="quote">
+                        او می‌گفت: «تا گفتم الله، به هیچ مخلوق بازنگردیدم»
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-divider">دوران سلوک و تحول</div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker">۴</div>
+                <div class="timeline-content">
+                    <div class="year">حدود ۱۲ سال</div>
+                    <div class="event-title">مجاهدت شبانۀ دوازده‌ساله</div>
+                    <div class="event-desc">
+                        شروع یکی از شگفت‌انگیزترین مجاهدات تاریخ عرفان: هر شب نماز عشا را در خرقان با جماعت می‌خواند، سپس سه فرسنگ (۱۸ کیلومتر) را تا بسطام طی می‌کند، کنار آرامگاه بایزید می‌ایستد و التماس می‌کند: «بار خدایا، از آن خلعت که بایزید را داده‌ای، ابوالحسن را بویی ده.» سپس برمی‌گردد و نماز صبح را در خرقان می‌خواند - همه روی همان وضوی نماز عشا. این کار را ۱۲ سال ادامه می‌دهد.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker">۵</div>
+                <div class="timeline-content">
+                    <div class="year">پس از ۱۲ سال</div>
+                    <div class="event-title">صدای بایزید از قبر - لحظۀ تحول</div>
+                    <div class="event-desc">
+                        بعد از ۱۲ سال، صدایی از تربت بایزید می‌آید: «ای ابوالحسن! گاه آن آمد که بنشینی.» شیخ می‌گوید: «من امّی‌ام، قرآن نیاموخته‌ام.» بایزید می‌گوید: «آنچه مرا داده‌اند از برکات تو بود. چون به خرقان گذر می‌کردم، نوری از آنجا به آسمان می‌رفت.» معجزه رخ می‌دهد: ابوالحسن که بی‌سواد بود، در ۲۴ روز تمام قرآن را می‌آموزد. انقلاب روحانی در وجودش اتفاق می‌افتد.
+                    </div>
+                    <div class="quote">
+                        «چون به خرقان رسیدم، در بیست و چهارم روز جمله قرآن بیاموختم»
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-divider">دوران شیخی و تأسیس خانقاه</div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker">۶</div>
+                <div class="timeline-content">
+                    <div class="year">حدود ۳۷۰-۳۸۰ هجری</div>
+                    <div class="event-title">دریافت خرقۀ طریقت</div>
+                    <div class="event-desc">
+                        ابوالحسن خرقۀ ارشاد و طریقت را از شیخ ابوالعباس احمد بن محمد عبدالکریم قصاب آملی دریافت می‌کند - همان استادی که ابوسعید ابوالخیر نیز از او خرقه گرفته بود. شیخ ابوالعباس در حال احتضار پیغام می‌فرستد: «مردی است در خرقان به نام ابوالحسن. این طبل و علم را به او فرستادم و اهل زمین را به او سپردم.» این سلسله، پیرو حکمت خسروانی است - مکتبی ریشه‌دار در فرهنگ ایران.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker">۷</div>
+                <div class="timeline-content">
+                    <div class="year">پس از تحول</div>
+                    <div class="event-title">تأسیس خانقاه - مکتب مردم‌داری</div>
+                    <div class="event-desc">
+                        شیخ خانقاهی در خرقان تأسیس می‌کند - تنها خانقاهی در آن زمان که با هزینۀ شخصی صاحبش اداره می‌شود. او هزینه‌ها را از کشاورزی و باغبانی تأمین می‌کند. روی در خانقاه جمله‌ای می‌نویسد که بعدها شعار ملی گردشگری ایران می‌شود.
+                    </div>
+                    <div class="quote">
+                        «هر که در این سرا درآید، نانش دهید و از ایمانش مپرسید. چه آن‌کس که به درگاه باری‌تعالی به جان ارزد، البته بر خوان بوالحسن به نان ارزد.»
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-divider">دیدارها و ملاقات‌های تاریخی</div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker">۸</div>
+                <div class="timeline-content">
+                    <div class="year">حدود ۴۰۰ هجری</div>
+                    <div class="event-title">پذیرش خواجه عبدالله انصاری</div>
+                    <div class="event-desc">
+                        خواجه عبدالله انصاری (پیر هرات) که بعدها یکی از بزرگ‌ترین عرفای قرن پنجم می‌شود، سال‌ها در خرقان زندگی می‌کند و از محضر شیخ بهره می‌برد. انصاری بعدها می‌گوید: «مشایخ من در حدیث و علم بسیارند، اما پیر من در تصوف شیخ ابوالحسن است. اگر او را ندیدمی، کجا حقیقت دانستمی!»
+                    </div>
+                    <div class="quote">
+                        خواجه در مناجاتش سرود: «عبدالله مردی بود بیابانی / ناگاه رسید به شیخ ابوالحسن خرقانی / چندان خورد که از خود گشت فانی / که نه عبدالله ماند و نه شیخ ابوالحسن خرقانی»
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker">۹</div>
+                <div class="timeline-content">
+                    <div class="year">۴۰۵-۴۱۷ هجری</div>
+                    <div class="event-title">دیدار احتمالی با سلطان محمود غزنوی</div>
+                    <div class="event-desc">
+                        سلطان محمود می‌خواهد شیخ به دیدارش برود. شیخ نمی‌رود. محمود پیغام می‌فرستد که اطاعت من واجب است. شیخ جواب می‌دهد: «چندان به طاعت حق مشغولم که به طاعت رسول نمی‌رسم، چه جای اولی‌الأمر!» سرانجام سلطان محمود خود به خرقان می‌آید. در برابر مقام معنوی شیخ خضوع می‌کند و با دعا و پند بازمی‌گردد. (این داستان در منابع صوفیه و حتی تاریخ بیهقی آمده است)
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker">۱۰</div>
+                <div class="timeline-content">
+                    <div class="year">حدود ۴۲۴ هجری</div>
+                    <div class="event-title">دیدار تحول‌آفرین با ابوسعید ابوالخیر</div>
+                    <div class="event-desc">
+                        یکی از مستندترین رویدادها: ابوسعید ابوالخیر، عارف بزرگ، به خرقان می‌آید. در مجلس شیخ ساکت می‌ماند. شیخ می‌پرسد چرا سخن نمی‌گویی؟ ابوسعید می‌گوید: «دو ترجمان برای یک مطلب لازم نیست.» این دیدار چنان تأثیری بر ابوسعید می‌گذارد که بعدها می‌گوید: «من خشت پخته بودم، چون به خرقان رسیدم گوهر بازگشتم.» این گفت‌وگوها با جزئیات در اسرارالتوحید ثبت شده است.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker">۱۱</div>
+                <div class="timeline-content">
+                    <div class="year">دوران شیخی</div>
+                    <div class="event-title">دیدارهای دیگر - ابن سینا و ناصرخسرو</div>
+                    <div class="event-desc">
+                        در منابع صوفیه آمده که ابن سینا (بوعلی) به خرقان آمد و کرامتی از شیخ دید که حکمتش را به طریقت کشاند. همچنین ناصرخسرو قبادیانی با دیدن کرامت شیخ، به ریاضت و تصفیۀ باطن مشغول شد. (این داستان‌ها از نظر تاریخی کاملاً مستند نیستند اما در فرهنگ عامه جایگاه دارند)
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-divider">سخنان و اندیشه‌های ماندگار</div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker">۱۲</div>
+                <div class="timeline-content">
+                    <div class="year">طول عمر شیخ</div>
+                    <div class="event-title">تدوین کتاب نورالعلوم</div>
+                    <div class="event-desc">
+                        یکی از شاگردان شیخ، سخنان و اقوال او را جمع‌آوری می‌کند و در کتابی به نام «نورالعلوم» تدوین می‌نماید. این کتاب در ده باب، حاوی مبانی عرفانی و بیانات عمیق شیخ است. عطار نیشابوری بعدها بسیاری از این سخنان را در تذکرة‌الاولیاء نقل می‌کند. سخنانی که قرن‌ها بعد همچنان الهام‌بخش است.
+                    </div>
+                    <div class="quote">
+                        «سر به نیستی خود فرو بردم چنان‌که هرگز وادید نیایم، تا سر به هستی تو برآرم چنان‌که به تو یک ذرّه بدانم»
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker">۱۳</div>
+                <div class="timeline-content">
+                    <div class="year">اندیشه‌ها</div>
+                    <div class="event-title">فلسفۀ جوانمردی و خدمت به خلق</div>
+                    <div class="event-desc">
+                        شیخ معتقد بود: «جوانمردی دریایی است به سه چشمه: سخاوت، شفقت، بی‌نیازی از خلق و نیازمندی به حق.» او می‌گفت: «کرامت جز خدمت خلق نباشد.» و اعلام می‌کرد: «در سرای دنیا زیر خاربنی با خداوند زندگانی کردن، از آن دوست‌تر دارم که در بهشت زیر درخت طوبی که از او من خبری ندارم.» - عارفی که حتی بهشت را نمی‌خواست اگر معنایش جدایی از حق بود.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-divider">پایان سفر دنیوی</div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker">۱۴</div>
+                <div class="timeline-content">
+                    <div class="year">۱۰ محرم ۴۲۵ هجری</div>
+                    <div class="event-title">وفات در خرقان - بازگشت به خاک</div>
+                    <div class="event-desc">
+                        روز دهم محرم (عاشورا) سال ۴۲۵ هجری، در سن ۷۳ سالگی، در همان خرقانی که در آن به دنیا آمده بود، شیخ جان به جان‌آفرین تسلیم می‌کند. هفتاد و سه سال از عمرش: دوازده سال مجاهدت، شصت سال خدمت. او آنچه را که بایزید ۱۱۷ سال پیش پیش‌بینی کرده بود، تحقق بخشید - و بیش از آن.
+                    </div>
+                    <div class="quote">
+                        مولوی سرود: «همچنان آمد که او فرموده بود / بوالحسن از مردمان آن را شنود»
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-divider">میراث جاودان</div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker">۱۵</div>
+                <div class="timeline-content">
+                    <div class="year">قرن‌های بعد</div>
+                    <div class="event-title">تأثیر ماندگار بر فرهنگ ایران</div>
+                    <div class="event-desc">
+                        مولوی در مثنوی چندین بار از او نام می‌برد. سهروردی او را «حکیم الهی ایران» می‌نامد. جامی او را «یگانه و غوث روزگار» می‌خواند. شخصیت او چنان در فرهنگ ایران نفوذ می‌کند که حتی امروز، هزار سال بعد، آرامگاهش در شاهرود مقصد زائران از سراسر جهان است. پیام او - خدمت به خلق، محبت فراتر از مذهب، و انسانیت بالاتر از همه چیز - همچنان زنده و جاری است.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker">۱۶</div>
+                <div class="timeline-content">
+                    <div class="year">امروز - ۱۴۰۰ هجری شمسی</div>
+                    <div class="event-title">آرامگاه در شاهرود - یادگار هزار ساله</div>
+                    <div class="event-desc">
+                        آرامگاه شیخ در ۲۴ کیلومتری شاهرود، استان سمنان، با باغی سرسبز و کتابخانه‌ای عرفانی، هنوز جایگاه معنوی و فرهنگی مهمی در ایران است. جملۀ روی در خانقاه - «هر که در این سرا درآید نانش دهید» - امروز شعار ملی گردشگری کشور است. بوی آن نوری که بایزید قرن‌ها پیش شنید، هنوز در آنجا احساس می‌شود.
+                    </div>
+                    <div class="quote">
+                        پیام ماندگار: خدمت به خلق، عبادت است. محبت، فراتر از مذهب است. انسانیت، بالاتر از همه چیز است.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header" style="margin-top: 100px;">
+            <h1 style="font-size: 2rem;">درس‌های زندگی</h1>
+            <p style="margin-top: 20px; line-height: 2; text-align: right; max-width: 900px

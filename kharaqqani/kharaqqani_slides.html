@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ابوالحسن خرقانی - ارائه اسلایدی</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazir', 'Tahoma', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 60px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 1;
+        }
+
+        .slide-title {
+            font-size: 3.5rem;
+            color: #f0a500;
+            margin-bottom: 40px;
+            text-align: center;
+            text-shadow: 0 0 30px rgba(240,165,0,0.5);
+        }
+
+        .slide-subtitle {
+            font-size: 1.8rem;
+            color: #d0d0d0;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .slide-content {
+            font-size: 1.4rem;
+            line-height: 2.2;
+            color: #e0e0e0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .quote-box {
+            background: rgba(240,165,0,0.1);
+            border-right: 5px solid #f0a500;
+            padding: 30px 40px;
+            margin: 40px 0;
+            border-radius: 10px;
+            font-style: italic;
+            font-size: 1.6rem;
+            color: #ffd700;
+            text-align: center;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            background: rgba(240,165,0,0.2);
+            border: 2px solid #f0a500;
+            color: #f0a500;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Vazir', 'Tahoma', sans-serif;
+        }
+
+        .nav-btn:hover {
+            background: #f0a500;
+            color: #000;
+            transform: scale(1.05);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .highlight {
+            color: #f0a500;
+            font-weight: bold;
+        }
+
+        ul {
+            list-style: none;
+            padding-right: 0;
+        }
+
+        ul li {
+            margin-bottom: 30px;
+            padding-right: 40px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '◆';
+            position: absolute;
+            right: 0;
+            color: #f0a500;
+            font-size: 1.2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid rgba(240,165,0,0.3);
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            color: #f0a500;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.3rem;
+            color: #d0d0d0;
+            margin-top: 15px;
+        }
+
+        .year-badge {
+            display: inline-block;
+            background: rgba(240,165,0,0.2);
+            padding: 10px 25px;
+            border-radius: 20px;
+            color: #f0a500;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide.active .slide-content > * {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .slide.active .slide-content > *:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .slide.active .slide-content > *:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- اسلاید 1: صفحه اول -->
+        <div class="slide active">
+            <div class="slide-title">شیخ ابوالحسن خرقانی</div>
+            <div class="slide-subtitle">سفر عارفی از خرقان تا خلود</div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">۷۳</span>
+                    <div class="stat-label">سال عمر پربرکت</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">۱۲</span>
+                    <div class="stat-label">سال مجاهدت شبانه</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">۱۱۷</span>
+                    <div class="stat-label">سال پس از بایزید</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">۱۰۰۰+</span>
+                    <div class="stat-label">سال تأثیرگذاری</div>
+                </div>
+            </div>
+            <div class="quote-box">«۳۵۲-۴۲۵ هجری قمری»</div>
+            <div class="slide-number">1 / 20</div>
+        </div>
+
+        <!-- اسلاید 2: پیش‌بینی بایزید -->
+        <div class="slide">
+            <div class="slide-title">پیش از تولد: پیش‌بینی معجزه‌آسا</div>
+            <div class="slide-content">
+                <div class="year-badge">۲۳۴ هجری - ۱۱۷ سال قبل از تولد</div>
+                <p style="font-size: 1.5rem; margin-bottom: 40px;">
+                    بایزید بسطامی، یکی از بزرگ‌ترین عرفای اسلام، از کنار روستای خرقان عبور می‌کند. ناگهان می‌ایستد و نفس عمیقی می‌کشد...
+                </p>
+                <div class="quote-box">
+                    «از این دیار بوی مردی می‌شنوم؛ مردی به نام علی با کنیت ابوالحسن که به درجه از من پیش بود. بار عیال کشد و کشت کند و درخت نشاند.»
+                </div>
+                <p style="text-align: center; font-size: 1.3rem; color: #f0a500; margin-top: 30px;">
+                    این پیش‌بینی، ۱۱۷ سال قبل از تولد شیخ گفته شد!
+                </p>
+            </div>
+            <div class="slide-number">2 / 20</div>
+        </div>
+
+        <!-- اسلاید 3: تولد -->
+        <div class="slide">
+            <div class="slide-title">۳۵۲ هجری: ولادت نور</div>
+            <div class="slide-content">
+                <div class="year-badge">سال ۳۵۲ هجری (۹۶۳ میلادی)</div>
+                <ul>
+                    <li>در روستای <span class="highlight">خرقان</span> از توابع بسطام، در منطقه قومس (کومش کنونی)</li>
+                    <li>پدر: از دهقانان و کشاورزان محلی</li>
+                    <li>نام: <span class="highlight">علی</span> • کنیت: <span class="highlight">ابوالحسن</span></li>
+                    <li>فاصله تا بسطام: ۳ فرسنگ (۱۸ کیلومتر) - این فاصله بعداً نقش کلیدی در زندگی او بازی می‌کند</li>
+                </ul>
+                <div class="quote-box" style="margin-top: 50px;">
+                    همان کودکی که بایزید ۱۱۷ سال پیش از او خبر داده بود، حالا متولد شده است
+                </div>
+            </div>
+            <div class="slide-number">3 / 20</div>
+        </div>
+
+        <!-- اسلاید 4: دوران جوانی -->
+        <div class="slide">
+            <div class="slide-title">دوران جوانی: عطش در سادگی</div>
+            <div class="slide-content">
+                <ul>
+                    <li><span class="highlight">امّی بود</span> - سواد نداشت، نه خواندن و نه نوشتن</li>
+                    <li><span class="highlight">کشاورز و باغبان بود</span> - با دست‌های خود کار می‌کرد</li>
+                    <li><span class="highlight">عیالوار بود</span> - مسئولیت خانواده داشت</li>
+                    <li>زندگی ساده‌ای داشت اما در دلش <span class="highlight">عطش عمیقی برای معرفت حق</span> وجود داشت</li>
+                </ul>
+                <div class="quote-box">
+                    «تا گفتم الله، به هیچ مخلوق بازنگردیدم»<br>
+                    <span style="font-size: 0.9em; color: #d0d0d0;">- ابوالحسن خرقانی</span>
+                </div>
+                <p style="text-align: center; margin-top: 40px; font-size: 1.4rem; color: #f0a500;">
+                    دقیقاً همان‌طور که بایزید پیش‌بینی کرده بود: «بار عیال کشد و کشت کند»
+                </p>
+            </div>
+            <div class="slide-number">4 / 20</div>
+        </div>
+
+        <!-- اسلاید 5: شروع مجاهدت -->
+        <div class="slide">
+            <div class="slide-title">آغاز مجاهدت: دوازده سال شگفت‌انگیز</div>
+            <div class="slide-content">
+                <p style="font-size: 1.6rem; margin-bottom: 40px; text-align: center;">
+                    یکی از شگفت‌انگیزترین مجاهدات تاریخ عرفان ایران آغاز می‌شود:
+                </p>
+                <ul>
+                    <li><span class="highlight">هر شب</span> نماز عشا را در خرقان با جماعت می‌خواند</li>
+                    <li>سپس ۳ فرسنگ (۱۸ کیلومتر) را تا بسطام <span class="highlight">پیاده</span> طی می‌کرد</li>
+                    <li>کنار آرامگاه بایزید می‌ایستاد و التماس می‌کرد</li>
+                    <li>باز برمی‌گشت و نماز صبح را در خرقان می‌خواند</li>
+                    <li><span class="highlight">همه این‌ها روی همان وضوی نماز عشا!</span></li>
+                </ul>
+                <div class="quote-box">
+                    «بار خدایا، از آن خلعت که بایزید را داده‌ای، ابوالحسن را بویی ده»
+                </div>
+                <p style="text-align: center; margin-top: 30px; font-size: 1.8rem; color: #f0a500;">
+                    این کار را ۱۲ سال، هر شب، بی‌وقفه ادامه داد
+                </p>
+            </div>
+            <div class="slide-number">5 / 20</div>
+        </div>
+
+        <!-- اسلاید 6: صدای بایزید -->
+        <div class="slide">
+            <div class="slide-title">لحظۀ تحول: صدایی از قبر</div>
+            <div class="slide-content">
+                <div class="year-badge">بعد از ۱۲ سال مجاهدت</div>
+                <p style="font-size: 1.5rem; margin-bottom: 30px;">
+                    یک شب، ناگهان صدایی از تربت بایزید آمد:
+                </p>
+                <div class="quote-box">
+                    «ای ابوالحسن! گاه آن آمد که بنشینی»
+                </div>
+                <p style="font-size: 1.4rem; margin: 30px 0;">
+                    شیخ گفت: «ای بایزید! من مردی امّی‌ام، قرآن نیاموخته‌ام!»
+                </p>
+                <div class="quote-box">
+                    «ای ابوالحسن! آنچه مرا داده‌اند از برکات تو بود. چون به خرقان گذر می‌کردم، نوری می‌دیدم که از خرقان به آسمان بر می‌رفت.»
+                </div>
+            </div>
+            <div class="slide-number">6 / 20</div>
+        </div>
+
+        <!-- اسلاید 7: معجزه -->
+        <div class="slide">
+            <div class="slide-title">معجزۀ آموختن</div>
+            <div class="slide-content">
+                <p style="font-size: 2rem; text-align: center; color: #f0a500; margin-bottom: 50px;">
+                    و از همان شب، معجزه‌ای اتفاق افتاد...
+                </p>
+                <div class="quote-box" style="font-size: 1.8rem;">
+                    ابوالحسن که هیچ سواد نداشت،<br>
+                    در <span class="highlight">۲۴ روز</span> تمام قرآن را آموخت
+                </div>
+                <p style="font-size: 1.5rem; text-align: center; margin-top: 50px; line-height: 2;">
+                    انقلابی روحانی در وجودش رخ داد<br><br>
+                    از این نقطه به بعد، او یکی از <span class="highlight">برجسته‌ترین شیوخ طریقت</span> در تاریخ عرفان ایران شد
+                </p>
+            </div>
+            <div class="slide-number">7 / 20</div>
+        </div>
+
+        <!-- اسلاید 8: دریافت خرقه -->
+        <div class="slide">
+            <div class="slide-title">دریافت خرقۀ طریقت</div>
+            <div class="slide-content">
+                <div class="year-badge">حدود ۳۷۰-۳۸۰ هجری</div>
+                <p style="font-size: 1.4rem; margin-bottom: 30px;">
+                    ابوالحسن خرقۀ ارشاد و طریقت را از <span class="highlight">شیخ ابوالعباس احمد قصاب آملی</span> دریافت می‌کند
+                </p>
+                <ul>
+                    <li>همان استادی که <span class="highlight">ابوسعید ابوالخیر</span> نیز از او خرقه گرفت</li>
+                    <li>این سلسله پیرو <span class="highlight">حکمت خسروانی</span> است - مکتبی ریشه‌دار در فرهنگ ایران</li>
+                </ul>
+                <div class="quote-box">
+                    شیخ ابوالعباس در حال احتضار فرمود:<br>
+                    «مردی است در خرقان به نام ابوالحسن. این طبل و علم را به او فرستادم و اهل زمین را به او سپردم.»
+                </div>
+            </div>
+            <div class="slide-number">8 / 20</div>
+        </div>
+
+        <!-- اسلاید 9: تأسیس خانقاه -->
+        <div class="slide">
+            <div class="slide-title">تأسیس خانقاه: مکتب مردم‌داری</div>
+            <div class="slide-content">
+                <p style="font-size: 1.5rem; margin-bottom: 40px;">
+                    شیخ خانقاهی در خرقان تأسیس کرد - <span class="highlight">تنها خانقاهی که با هزینۀ شخصی صاحبش اداره می‌شد</span>
+                </p>
+                <ul>
+                    <li>هزینه‌ها را از کشاورزی و باغبانی تأمین می‌کرد</li>
+                    <li>همه را با محبت می‌پذیرفت، بدون پرسیدن از دین و مذهب</li>
+                </ul>
+                <div class="quote-box" style="font-size: 1.6rem;">
+                    روی در خانقاه نوشت:<br><br>
+                    «هر که در این سرا درآید، نانش دهید و از ایمانش مپرسید.<br>
+                    چه آن‌کس که به درگاه باری‌تعالی به جان ارزد،<br>
+                    البته بر خوان بوالحسن به نان ارزد.»
+                </div>
+                <p style="text-align: center; margin-top: 30px; font-size: 1.3rem; color: #f0a500;">
+                    این جمله امروز شعار ملی گردشگری ایران است!
+                </p>
+            </div>
+            <div class="slide-number">9 / 20</div>
+        </div>
+
+        <!-- اسلاید 10: خواجه انصاری -->
+        <div class="slide">
+            <div class="slide-title">شاگرد برجسته: خواجه عبدالله انصاری</div>
+            <div class="slide-content">
+                <div class="year-badge">حدود ۴۰۰ هجری</div>
+                <p style="font-size: 1.4rem; margin-bottom: 30px;">
+                    <span class="highlight">خواجه عبدالله انصاری</span> (پیر هرات) - که بعدها یکی از بزرگ‌ترین عرفای قرن پنجم شد - سال‌ها در خرقان با شیخ بود
+                </p>
+                <div class="quote-box">
+                    «عبدالله مردی بود بیابانی<br>
+                    می‌رفت بطلب آب زندگانی<br>
+                    ناگاه رسید به شیخ ابوالحسن خرقانی<br>
+                    دید چشمه آب زندگانی<br>
+                    چندان خورد که از خود گشت فانی<br>
+                    که نه عبدالله ماند و نه شیخ ابوالحسن خرقانی»<br>
+                    <span style="font-size: 0.9em;">- خواجه عبدالله انصاری</span>
+                </div>
+                <p style="text-align: center; margin-top: 30px; font-size: 1.3rem;">
+                    انصاری می‌گفت: «اگر او را ندیدمی، کجا حقیقت دانستمی!»
+                </p>
+            </div>
+            <div class="slide-number">10 / 20</div>
+        </div>
+
+        <!-- اسلاید 11: سلطان محمود -->
+        <div class="slide">
+            <div class="slide-title">عزت نفس در برابر قدرت</div>
+            <div class="slide-content">
+                <div class="year-badge">۴۰۵-۴۱۷ هجری</div>
+                <p style="font-size: 1.4rem; margin-bottom: 30px;">
+                    داستانی جالب از دیدار احتمالی با <span class="highlight">سلطان محمود غزنوی</span>:
+                </p>
+                <ul>
+                    <li>سلطان محمود از شیخ خواست به دیدارش برود - شیخ نرفت</li>
+                    <li>محمود پیغام فرستاد: «من اولی‌الأمر هستم و اطاعتم بر تو واجب است»</li>
+                </ul>
+                <div class="quote-box">
+                    شیخ جواب داد:<br>
+                    «چندان به طاعت حق مشغولم که به طاعت رسول نمی‌رسم،<br>
+                    چه جای اولی‌الأمر!»
+                </div>
+                <p style="text-align: center; margin-top: 30px; font-size: 1.4rem; color: #f0a500;">
+                    سرانجام سلطان محمود خود به خرقان آمد و در برابر مقام معنوی شیخ خضوع کرد
+                </p>
+            </div>
+            <div class="slide-number">11 / 20</div>
+        </div>
+
+        <!-- اسلاید 12: ابوسعید -->
+        <div class="slide">
+            <div class="slide-title">دیدار دو عارف بزرگ</div>
+            <div class="slide-content">
+                <div class="year-badge">حدود ۴۲۴ هجری</div>
+                <p style="font-size: 1.5rem; margin-bottom: 30px;">
+                    <span class="highlight">ابوسعید ابوالخیر</span> به خرقان می‌آید. در مجلس شیخ ساکت می‌ماند.
+                </p>
+                <p style="font-size: 1.4rem; margin-bottom: 20px;">
+                    شیخ: «چرا سخن نمی‌گویی؟»
+                </p>
+                <div class="quote-box" style="font-size: 1.8rem;">
+                    ابوسعید: «دو ترجمان برای یک مطلب لازم نیست»
+                </div>
+                <div class="quote-box" style="margin-top: 40px;">
+                    ابوسعید بعدها گفت:<br>
+                    «من خشت پخته بودم،<br>
+                    چون به خرقان رسیدم گوهر بازگشتم»
+                </div>
+            </div>
+            <div class="slide-number">12 / 20</div>
+        </div>
+
+        <!-- اسلاید 13: کتاب نورالعلوم -->
+        <div class="slide">
+            <div class="slide-title">میراث فکری: کتاب نورالعلوم</div>
+            <div class="slide-content">
+                <p style="font-size: 1.5rem; margin-bottom: 40px;">
+                    یکی از شاگردان شیخ، سخنان و اقوال او را جمع‌آوری کرد و در کتابی به نام <span class="highlight">«نورالعلوم»</span> تدوین نمود
+                </p>
+                <ul>
+                    <li>این کتاب در ده باب، حاوی مبانی عرفانی و بیانات عمیق شیخ است</li>
+                    <li><span class="highlight">عطار نیشابوری</span> بسیاری از این سخنان را در تذکرة‌الاولیاء نقل کرد</li>
+                    <li>سخنانی که قرن‌ها بعد همچنان الهام‌بخش است</li>
+                </ul>
+                <div class="quote-box">
+                    «سر به نیستی خود فرو بردم چنان‌که هرگز وادید نیایم،<br>
+                    تا سر به هستی تو برآرم چنان‌که به تو یک ذرّه بدانم»
+                </div>
+            </div>
+            <div class="slide-number">13 / 20</div>
+        </div>
+
+        <!-- اسلاید 14: فلسفه جوانمردی -->
+        <div class="slide">
+            <div class="slide-title">فلسفۀ جوانمردی</div>
+            <div class="slide-content">
+                <div class="quote-box" style="font-size: 1.7rem;">
+                    «جوانمردی دریایی است به سه چشمه:<br>
+                    یکی سخاوت، دوم شفقت،<br>
+                    سوم بی‌نیازی از خلق و نیازمندی به حق»
+                </div>
+                <ul style="margin-top: 40px;">
+                    <li><span class="highlight">«کرامت جز خدمت خلق نباشد»</span></li>
+                    <li>«هرکه حق را دوست داشت، به صحبت جوانمردان پیوست»</li>
+                    <li>«هر که به صحبت جوانمردان پیوست، به صحبت حق پیوست»</li>
+                </ul>
+            </div>
+            <div class="slide-number">14 / 20</div>
+        </div>
+
+        <!-- اسلاید 15: سخنان ماندگار 1 -->
+        <div class="slide">
+            <div class="slide-title">سخنان ماندگار - بخش اول</div>
+            <div class="slide-content">
+                <div class="quote-box">
+                    «تا دست از دنیا بداشتم، هرگز با سرش نشدم.<br>
+                    و تا گفتم الله، به هیچ مخلوق بازنگردیدم»
+                </div>
+                <div class="quote-box" style="margin-top: 30px;">
+                    «در سرای دنیا زیر خاربنی با خداوند زندگانی کردن،<br>
+                    از آن دوست‌تر دارم که در بهشت زیر درخت طوبی<br>
+                    که از او من خبری 
